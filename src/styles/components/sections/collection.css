@@ -1,4 +1,56 @@
 .collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
   padding: 80px;
-  border: 1px solid red;
+}
+
+.collection__heading {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.collection__list {
+  position: relative;
+  display: flex;
+  gap: 24px;
+}
+
+.collection__list-swiper {
+  position: absolute;
+  right: -20px;
+  top: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  cursor: pointer;
+}
+
+.collection__list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.collection__list-text_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.collection__list-item-heading,
+.collection__list-item-price {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.collection__list-item-price {
+  color: #737373;
 }

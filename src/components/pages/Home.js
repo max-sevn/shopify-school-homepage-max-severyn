@@ -1,9 +1,58 @@
 import "../../styles/components/sections/hero.css";
 import "../../styles/components/sections/collection.css";
+import "../../styles/components/sections/faq.css";
+import { Button } from "../ui/Button";
+import { CollectionCard } from "../collectionCard";
+import { QuestionCard } from "../questionCard";
+
+function test() {
+  console.log("test");
+}
 
 export function Home() {
+  const collectionsData = [
+    {
+      src: "/src/assets/images/collection-1.jpg",
+      heading: "Nike Streakfly 2",
+      price: "300",
+    },
+    {
+      src: "/src/assets/images/collection-2.jpg",
+      heading: "Nike Pegasus Premium",
+      price: "350",
+    },
+    {
+      src: "/src/assets/images/collection-3.jpg",
+      heading: "Nike Pegasus 41",
+      price: "280",
+    },
+    {
+      src: "/src/assets/images/collection-4.jpg",
+      heading: "Nike Revolution 7",
+      price: "440",
+    },
+  ];
+  const questionsData = [
+    {
+      heading: "What are Nike's delivery options?",
+      content:
+        "When you shop Nike online, either in the Nike App or on Nike.com, you can return items that are unworn and unwashed and still have their product tags attached within 30 days of purchase (some exceptions apply). That includes custom Nike By You sneakers.",
+    },
+    {
+      heading: "What are Nike's delivery options?",
+      content:
+        "When you shop Nike online, either in the Nike App or on Nike.com, you can return items that are unworn and unwashed and still have their product tags attached within 30 days of purchase (some exceptions apply). That includes custom Nike By You sneakers.",
+    },
+  ];
+  const collectionsHTML = collectionsData
+    .map((card) => CollectionCard(card))
+    .join("");
+
+  const questionsHTML = questionsData
+    .map((card) => QuestionCard(card))
+    .join("");
   return `
-   <section class="hero">
+<section class="hero">
   <div class="hero__inner">
     <div class="hero__inner-text_wrapper">
       <h1 class="hero__heading">
@@ -14,11 +63,40 @@ export function Home() {
         step feel special.
       </p>
     </div>
-    <button class="hero__button button button--light">
-      Shop the Collection
-    </button>
+    ${Button({
+      blockClass: "hero",
+      label: "Shop the Collection",
+    })}
   </div>
 </section>
-<section class="collection">test</section>
+<section class="collection">
+      <h1 class="collection__heading">Featured Collection</h1>
+      <div class="collection__list">
+        ${collectionsHTML}
+        <button class='collection__list-swiper'>
+           <img src="/src/assets/icons/arrow-right.svg" alt="arrowRight" />
+        </button>
+      </div>
+</section>
+<section class="faq">
+      <div class="faq-text_wrapper">
+        <h1 class="faq-heading">Frequently asked questions</h1>
+        <p class="faq-text">
+          Answers to our most frequently asked questions are just one click
+          away.
+        </p>
+      </div>
+      <div class="faq__questions-wrapper">
+        ${questionsHTML}
+      </div>
+    </section>
     `;
 }
+
+// binding the event after rendering
+requestAnimationFrame(() => {
+  const btn = document.querySelector(`[btn-id="hero__button-id"]`);
+  if (btn) {
+    btn.addEventListener("click", test);
+  }
+});

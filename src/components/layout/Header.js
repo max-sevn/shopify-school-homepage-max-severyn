@@ -2,7 +2,7 @@ import "../../styles/components/header.css";
 
 export function Header() {
   return `
-    <header class="header">
+<header class="header">
   <a class="header__logo logo" href="#">
     <img class="header__image" src="/src/assets/logo.svg" alt="logo" />
   </a>
