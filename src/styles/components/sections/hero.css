@@ -1,0 +1,30 @@
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 750px;
+  background-image: url("/src/assets/images/heroImage-1.jpg");
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 648px;
+  margin-left: 60px;
+  color: #ffffff;
+}
+
+.hero__inner-text_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero__heading {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 48px;
+  text-transform: uppercase;
+}
