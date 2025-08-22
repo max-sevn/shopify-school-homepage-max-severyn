@@ -1,3 +1,4 @@
+/* COLLECTION STYLES */
 .collection {
   display: flex;
   flex-direction: column;
@@ -12,30 +13,16 @@
   line-height: 36px;
 }
 
-.collection__list {
+.collection__wrapper {
   position: relative;
-  display: flex;
-  gap: 24px;
-}
-
-.collection__list-swiper {
-  position: absolute;
-  right: -20px;
-  top: 35%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  border: 1px solid #ebebeb;
-  cursor: pointer;
+  width: 100%;
 }
 
 .collection__list-item {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  cursor: pointer;
 }
 
 .collection__list-text_wrapper {
@@ -53,4 +40,28 @@
 
 .collection__list-item-price {
   color: #737373;
+}
+
+/* SWIPER RELATED STYLES */
+.collection__list-swiper {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  z-index: 1;
+  transform: translate(0%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 12px;
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
 }

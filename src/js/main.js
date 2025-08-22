@@ -12,6 +12,29 @@ function renderContent(page) {
   switch (page) {
     case "home":
       content.innerHTML = Home();
+      if (document.querySelector(".hero__swiper")) {
+        new Swiper(".hero__swiper", {
+          loop: true,
+          autoplay: { delay: 10000 },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      }
+
+      if (document.querySelector(".collection__swiper")) {
+        new Swiper(".collection__swiper", {
+          slidesPerView: 4,
+          loop: true,
+          spaceBetween: 24,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            clickable: true,
+          },
+          allowTouchMove: false,
+        });
+      }
       break;
   }
 }

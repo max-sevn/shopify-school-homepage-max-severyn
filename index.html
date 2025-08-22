@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/stellarsoft.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,7 +19,18 @@
   <body>
     <div id="header"></div>
     <main id="content"></main>
+    <!-- <section class="collection">
+      <h1 class="collection__heading">Featured Collection</h1>
+      <div class="collection__list">
+        ${collectionsHTML}
+        <button class="collection__list-swiper">
+          <img src="/src/assets/icons/arrow-right.svg" alt="arrowRight" />
+        </button>
+      </div>
+    </section> -->
     <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
