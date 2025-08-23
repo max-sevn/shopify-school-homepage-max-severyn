@@ -39,7 +39,17 @@ export function Home() {
         "When you shop Nike online, either in the Nike App or on Nike.com, you can return items that are unworn and unwashed and still have their product tags attached within 30 days of purchase (some exceptions apply). That includes custom Nike By You sneakers.",
     },
     {
-      heading: "What are Nike's delivery options?",
+      heading: "What is Nike's returns policy?",
+      content:
+        "When you shop Nike online, either in the Nike App or on Nike.com, you can return items that are unworn and unwashed and still have their product tags attached within 30 days of purchase (some exceptions apply). That includes custom Nike By You sneakers.",
+    },
+    {
+      heading: "Where is my Nike order?",
+      content:
+        "When you shop Nike online, either in the Nike App or on Nike.com, you can return items that are unworn and unwashed and still have their product tags attached within 30 days of purchase (some exceptions apply). That includes custom Nike By You sneakers.",
+    },
+    {
+      heading: "How do I find the right size and fit?",
       content:
         "When you shop Nike online, either in the Nike App or on Nike.com, you can return items that are unworn and unwashed and still have their product tags attached within 30 days of purchase (some exceptions apply). That includes custom Nike By You sneakers.",
     },
@@ -53,6 +63,7 @@ export function Home() {
   const questionsHTML = questionsData
     .map((card) => QuestionCard(card))
     .join("");
+
   return `
 <section class="hero">
       <div class="swiper hero__swiper">
@@ -106,10 +117,10 @@ export function Home() {
           away.
         </p>
       </div>
-      <div class="faq__questions-wrapper">
+      <div class="faq__accordion">
         ${questionsHTML}
       </div>
-    </section>
+  </section>
     `;
 }
 
@@ -118,5 +129,27 @@ requestAnimationFrame(() => {
   const btn = document.querySelector(`[btn-id="hero__button-id"]`);
   if (btn) {
     btn.addEventListener("click", test);
+  }
+
+  //accordion logic
+  const faqContainer = document.querySelector(".faq__accordion");
+  if (faqContainer) {
+    document.querySelectorAll(".faq__accordion-header").forEach((header) => {
+      header.addEventListener("click", () => {
+        const contentBlock = header.nextElementSibling;
+        const collapseIcon = header.lastElementChild;
+        if (contentBlock.style.maxHeight) {
+          //collapse accordion content
+          contentBlock.style.maxHeight = null;
+          collapseIcon.src = "/src/assets/icons/plus-circle.svg";
+        } else {
+          //expand to full height accordion content
+          contentBlock.style.maxHeight = contentBlock.scrollHeight + "px";
+          collapseIcon.src = "/src/assets/icons/minus-circle.svg";
+        }
+        const item = header.parentElement;
+        item.classList.toggle("active");
+      });
+    });
   }
 });
