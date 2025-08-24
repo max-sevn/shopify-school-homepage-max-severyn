@@ -105,7 +105,7 @@ export function Footer() {
     return `
    <nav class="footer__menu">
       <h1 class="footer__heading">${currentNavigationData.heading}</h1>
-      <ul class="footer-list">
+      <ul class="footer__list">
         ${currentNavigationData.navigationLinks
           .map(
             (currentLink) => `
@@ -128,21 +128,21 @@ export function Footer() {
 
   return `
   <footer class="footer">
-      <div class="footer__menu-wrapper">${navigationHTML}</div>
+      <div class="footer__wrapper">${navigationHTML}</div>
       <div class="footer__misc">
         <span class="footer__misc-copyright">© 2025 Nike, Inc. All rights reserved</span>
-        <nav class="footer__misc-menu">
+        <nav class="footer__misc-navigation">
           <ul class="footer__misc-list">
-            <li class="footer__misc-menu-item">
-              <a class="footer__misc-menu-link" href="#">Terms & Use</a>
+            <li class="footer__misc-item">
+              <a class="footer__misc-link" href="#">Terms & Use</a>
             </li>
-            <li class="footer__misc-menu-item">
-              <a class="footer__misc-menu-link" href="#"
+            <li class="footer__misc-item">
+              <a class="footer__misc-link" href="#"
                 >Privacy & Cookie Policy</a
               >
             </li>
-            <li class="footer__misc-menu-item">
-              <a class="footer__misc-menu-link" href="#"
+            <li class="footer__misc-item">
+              <a class="footer__misc-link" href="#"
                 >Privacy & Cookie Setting</a
               >
             </li>

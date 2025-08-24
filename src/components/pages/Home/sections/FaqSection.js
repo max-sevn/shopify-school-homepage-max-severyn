@@ -31,17 +31,15 @@ export function FaqSection() {
 
   return `
     <section class="faq">
-      <div class="faq-text_wrapper">
-        <h1 class="faq-heading">Frequently asked questions</h1>
-        <p class="faq-text">
+      <div class="faq__content">
+        <h1 class="faq__heading">Frequently asked questions</h1>
+        <p class="faq__text">
           Answers to our most frequently asked questions are just one click
           away.
         </p>
       </div>
-      <div class="faq__accordion">
-        ${questionsHTML}
-      </div>
-</section>
+      <div class="faq__accordion">${questionsHTML}</div>
+    </section>
     `;
 }
 

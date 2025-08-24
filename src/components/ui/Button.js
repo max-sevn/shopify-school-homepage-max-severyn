@@ -6,7 +6,7 @@ export function Button({
   extraClass,
 }) {
   return `
-    <button class="${blockClass}__button button button--${variant} ${extraClass}" btn-id="${blockClass}__button-id" type="${type}">
+    <button class="${blockClass}-button button button--${variant} ${extraClass}" btn-id="${blockClass}-button-id" type="${type}">
       ${label}
     </button>
     `;

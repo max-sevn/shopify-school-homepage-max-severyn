@@ -39,7 +39,7 @@ export function CollectionSection() {
           ${collectionsHTML}
         </div>
       </div>
-      <div class="swiper-button-next collection__list-swiper">
+      <div class="swiper-button-next collection__button-next">
             <img src="/src/assets/icons/arrow-right.svg" alt="arrowRight" />
         </div>
       <div>

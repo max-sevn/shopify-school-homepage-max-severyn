@@ -9,21 +9,22 @@
   background-color: #f5f5f5;
 }
 
-.faq-text_wrapper {
+.faq__content {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.faq-heading {
+.faq__heading {
   font-size: 30px;
   font-weight: 400;
   line-height: 36px;
 }
 
-.faq-text {
+.faq__text {
   color: #737373;
 }
+
 .faq__accordion {
   display: flex;
   flex-direction: column;
@@ -47,7 +48,11 @@
   display: flex;
   justify-content: space-between;
   padding: 24px;
+  font-family: inherit;
+  border: 0;
+  border-radius: 8px;
   cursor: pointer;
+  background-color: #ffffff;
 }
 
 .faq__accordion-heading {
@@ -58,11 +63,11 @@
 
 .faq__accordion-content {
   max-height: 0;
-  overflow: hidden;
   padding: 0 24px;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  overflow: hidden;
   color: #737373;
   transition: 0.3s ease;
 }

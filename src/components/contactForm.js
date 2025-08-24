@@ -3,9 +3,9 @@ import { Button } from "./ui/Button";
 
 export function Form() {
   return `
-    <form class="contact-form">
-      <div class="contact-form__row">
-        <div class="contact-form__field">
+    <form class="form__contact">
+      <div class="form__contact-row">
+        <div class="form__contact-field">
           <label for="name">Name</label>
           <input
             type="text"
@@ -16,7 +16,7 @@ export function Form() {
           />
         </div>
 
-        <div class="contact-form__field">
+        <div class="form__contact-field">
           <label for="phone">Number</label>
           <input
             type="tel"
@@ -28,7 +28,7 @@ export function Form() {
         </div>
       </div>
 
-      <div class="contact-form__field">
+      <div class="form__contact-field">
         <label for="email">Email</label>
         <input
           type="email"
@@ -39,28 +39,28 @@ export function Form() {
         />
       </div>
 
-      <div class="contact-form__field">
+      <div class="form__contact-field">
         <label for="message">Message</label>
         <textarea
           id="message"
           name="message"
-          rows="4"
+          rows="6"
           placeholder="Enter Message"
           required
         ></textarea>
       </div>
-       ${Button({
-         blockClass: "contact-form",
-         label: "Submit",
-         variant: "dark",
-         type: "submit",
-       })}
+      ${Button({
+        blockClass: "form__contact",
+        label: "Submit",
+        variant: "dark",
+        type: "submit",
+      })}
     </form>
     `;
 }
 
 requestAnimationFrame(() => {
-  const form = document.querySelector(".contact-form");
+  const form = document.querySelector(".form__contact");
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();

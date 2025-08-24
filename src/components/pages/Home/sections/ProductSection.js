@@ -130,20 +130,16 @@ function productSetup() {
   const currentProductId = Number(
     document.querySelector(".product__main").getAttribute("product-id")
   );
-  const productsList = document.querySelectorAll(".product__main__variant");
+  const productsList = document.querySelectorAll(".product__main-variant");
   let productsListArray = [...productsList];
   let activeProduct = productsListArray.filter(
     (item) => Number(item.getAttribute("product-id")) === currentProductId
   )[0];
   activeProduct.classList.add("active");
 
-  document
-    .querySelector(".product__gallery-list__item")
-    .classList.add("active");
+  document.querySelector(".product__gallery-item").classList.add("active");
 
-  document
-    .querySelector(".product__main-size__variant")
-    .classList.add("active");
+  document.querySelector(".product__main-size-variant").classList.add("active");
 
   function bindDelegationListener(parentClass, childClass, callback) {
     const container = document.querySelector(parentClass);
@@ -166,13 +162,13 @@ function productSetup() {
   //binding gallery controls
   bindDelegationListener(
     ".product__gallery-list",
-    ".product__gallery-list__item",
+    ".product__gallery-item",
     (btn) => {
       const getImage = btn.firstElementChild;
       if (getImage && getImage.tagName === "IMG") {
         const srcValue = getImage.getAttribute("src");
         const mainVariant = document.querySelector(
-          ".product__gallery__preview-image"
+          ".product__gallery-preview-image"
         );
         mainVariant.src = srcValue;
       }
@@ -182,7 +178,7 @@ function productSetup() {
   //binding variants controls
   bindDelegationListener(
     ".product__main-variants",
-    ".product__main__variant",
+    ".product__main-variant",
     (btn) => {
       const getId = Number(btn.getAttribute("product-id"));
       if (currentProductId === getId) return;
@@ -198,83 +194,89 @@ function productSetup() {
 
   //binding sizes controls
   bindDelegationListener(
-    ".product__main-size__variants",
-    ".product__main-size__variant"
+    ".product__main-size-variants",
+    ".product__main-size-variant"
   );
 }
 
 function renderProduct(data, id = 1) {
   const currentProduct = data.filter((item) => item.id === id)[0];
   return `
-    <div class="product__gallery">
-        <div class="product__gallery-list">
+   <div class="product__gallery">
+      <div class="product__gallery-list">
         ${currentProduct.images
           .map(
             (image, index) => `
-             <button class="product__gallery-list__item">
-            <img
-              class="product__gallery-list__item-image"
-              src="${image}"
-              alt="${currentProduct.product + index}"
-            />
-            <div class="product__gallery-list__item-overlay"></div>
-          </button>
-            `
+        <button class="product__gallery-item">
+          <img
+            class="product__gallery-image"
+            src="${image}"
+            alt="${currentProduct.product + index}"
+          />
+          <div class="product__gallery-overlay"></div>
+        </button>
+        `
           )
           .join("")}
-        </div>
-        <div class="product__gallery__preview">
+      </div>
+      <div class="product__gallery-preview">
+        <img
+          class="product__gallery-preview-image"
+          src="${currentProduct.images[0]}"
+          alt="previewImage"
+        />
+        <div class="product__gallery-badge">
           <img
-            class="product__gallery__preview-image"
-            src="${currentProduct.images[0]}"
-            alt="previewImage"
+            class="product__gallery-badge-icon"
+            src="/src/assets/icons/star.svg"
           />
+          <span class="product__gallery-badge-text">Highly Rated</span>
         </div>
       </div>
-      <div class="product__main" product-id="${currentProduct.id}">
-        <div class="product__main-details">
-          <h2 class="product__main__heading">${currentProduct.product}</h2>
-          <p class="product__main__price">${currentProduct.price}</p>
-        </div>
-        <div class="product__main-variants">
+    </div>
+    <div class="product__main" product-id="${currentProduct.id}">
+      <div class="product__main-details">
+        <h2 class="product__main-heading">${currentProduct.product}</h2>
+        <p class="product__main-price">${currentProduct.price}</p>
+      </div>
+      <div class="product__main-variants">
         ${productsData
           .map(
-            (product) =>
-              `
-             <button class="product__main__variant" product-id="${product.id}">
-            <img
-              class="product__main__variant-image"
-              src="${product.images[0]}"
-              alt="variant"
-            />
-          </button>
-            `
+            (product) => `
+        <button class="product__main-variant" product-id="${product.id}">
+          <img
+            class="product__main-variant-image"
+            src="${product.images[0]}"
+            alt="variant"
+          />
+        </button>
+        `
           )
           .join("")}
-        </div>
-        <div class="product__main-size">
-          <label class="product__main-size__label">Select Size:</label>
-          <div class="product__main-size__variants">
+      </div>
+      <div class="product__main-size">
+        <label class="product__main-size-label">Select Size:</label>
+        <div class="product__main-size-variants">
           ${currentProduct.sizes
             .map(
               (item) => `
-            <button class='product__main-size__variant'>${item.size}</button>
-            `
+          <button class="product__main-size-variant">${item.size}</button>
+          `
             )
             .join("")}
-          </div>
         </div>
-       ${Button({
-         blockClass: "product",
-         label: "Add To Bag",
-         variant: "dark",
-         extraClass: "button-wide",
-       })}
-        <p class="product__main-description">
-          Let your attitude have the edge in your Nike Air Max Plus, a Tuned Air
-          experience that offers premium stability and unbelievable cushioning.
-        </p>
       </div>
+      ${Button({
+        blockClass: "product",
+        label: "Add To Bag",
+        variant: "dark",
+        extraClass: "button-wide",
+      })}
+      <p class="product__main-description">
+        Let your attitude have the edge in your Nike Air Max Plus, a Tuned Air
+        experience that offers premium stability and unbelievable cushioning.
+      </p>
+   </div>
     `;
 }
 

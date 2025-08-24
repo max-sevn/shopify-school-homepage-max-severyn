@@ -20,7 +20,7 @@ ${FormSection()}
 
 // binding the event after rendering
 requestAnimationFrame(() => {
-  const btn = document.querySelector(`[btn-id="hero__button-id"]`);
+  const btn = document.querySelector(`[btn-id="hero-button-id"]`);
   if (btn) {
     btn.addEventListener("click", test);
   }
