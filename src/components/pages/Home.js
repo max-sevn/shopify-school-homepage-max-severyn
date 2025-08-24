@@ -4,6 +4,7 @@ import "../../styles/components/sections/faq.css";
 import { Button } from "../ui/Button";
 import { CollectionCard } from "../collectionCard";
 import { QuestionCard } from "../questionCard";
+import { Form } from "../contactForm";
 
 function test() {
   console.log("test");
@@ -120,7 +121,12 @@ export function Home() {
       <div class="faq__accordion">
         ${questionsHTML}
       </div>
-  </section>
+</section>
+<section>test item section</section>
+<section class="form">
+<h2 class="form__heading">Need Help?</h2>
+${Form()}
+</section>
     `;
 }
 

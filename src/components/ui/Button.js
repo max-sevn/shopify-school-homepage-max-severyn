@@ -1,6 +1,11 @@
-export function Button({ blockClass, label, type = "light" }) {
+export function Button({
+  blockClass,
+  label,
+  variant = "light",
+  type = "button",
+}) {
   return `
-    <button class="${blockClass}__button button button--${type}" btn-id="${blockClass}__button-id">
+    <button class="${blockClass}__button button button--${variant}" btn-id="${blockClass}__button-id" type="${type}">
       ${label}
     </button>
     `;

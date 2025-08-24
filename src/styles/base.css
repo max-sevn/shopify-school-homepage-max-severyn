@@ -34,3 +34,14 @@ ul {
   cursor: pointer;
   background-color: #cacacb;
 }
+
+.button--dark {
+  background-color: #111111;
+  color: #ffffff;
+  transition: 0.2s ease-in-out;
+}
+
+.button--dark:hover {
+  cursor: pointer;
+  background-color: #737373;
+}
