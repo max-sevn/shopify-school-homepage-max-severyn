@@ -152,25 +152,3 @@ export function Footer() {
   </footer>
     `;
 }
-
-{
-  /* <footer class="footer">
-      <nav class="footer__menu">
-        <h1 class="footer__heading">Resources</h1>
-        <ul class="footer-list">
-          <li class="footer__menu-item">
-            <a class="footer__menu-link" href="#">New & Featured</a>
-          </li>
-          <li class="footer__menu-item">
-            <a class="footer__menu-link" href="#">Men</a>
-          </li>
-          <li class="footer__menu-item">
-            <a class="footer__menu-link" href="#">Women</a>
-          </li>
-          <li class="footer__menu-item">
-            <a class="footer__menu-link" href="#">Kids</a>
-          </li>
-        </ul>
-      </nav>
-  </footer> */
-}

@@ -117,6 +117,7 @@ const productsData = [
     ],
   },
 ];
+
 export function ProductSection() {
   return `
     <section class="product">
