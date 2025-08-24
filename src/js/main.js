@@ -1,7 +1,7 @@
 import "../styles/base.css";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
-import { Home } from "../components/pages/Home";
+import { Home } from "../components/pages/Home/Home";
 
 document.querySelector("#header").innerHTML = Header();
 document.querySelector("#footer").innerHTML = Footer();

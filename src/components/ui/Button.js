@@ -3,9 +3,10 @@ export function Button({
   label,
   variant = "light",
   type = "button",
+  extraClass,
 }) {
   return `
-    <button class="${blockClass}__button button button--${variant}" btn-id="${blockClass}__button-id" type="${type}">
+    <button class="${blockClass}__button button button--${variant} ${extraClass}" btn-id="${blockClass}__button-id" type="${type}">
       ${label}
     </button>
     `;

@@ -19,10 +19,16 @@ ul {
 .button {
   width: fit-content;
   padding: 16px 32px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
   border: 0;
   border-radius: 8px;
-  font-size: 16px;
-  line-height: 24px;
+}
+
+.button-wide {
+  width: 100%;
 }
 
 .button--light {
