@@ -21,6 +21,7 @@ export function HeroSection() {
         </div>
         <div class="hero__inner">
           <div class="hero__content">
+            <div class="hero__content-wrapper">
             <h1 class="hero__heading">
               More than just shoes — it's a part of your story.
             </h1>
@@ -28,6 +29,7 @@ export function HeroSection() {
               Original sneakers from Nike and other top brands that make every
               step feel special.
             </p>
+            </div>
             ${Button({ blockClass: "hero", label: "Shop the Collection" })}
           </div>
         </div>

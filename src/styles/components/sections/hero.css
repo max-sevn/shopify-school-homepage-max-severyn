@@ -23,15 +23,22 @@
   color: #ffffff;
 }
 
-.hero__content {
+.hero__content,
+.hero__content-wrapper {
   display: flex;
   flex-direction: column;
+}
+.hero__content {
+  gap: 32px;
+}
+
+.hero__content-wrapper {
   gap: 16px;
 }
 
 .hero__heading {
   font-size: 48px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 48px;
   text-transform: uppercase;
 }
@@ -56,4 +63,30 @@
 
 .swiper-pagination-bullet-active {
   background: #ffffff;
+}
+
+/* Tablet: from 768px up to 1279px */
+@media (min-width: 768px) and (max-width: 1279px) {
+}
+
+/* Mobile: less than 768px */
+@media (max-width: 767px) {
+  .hero {
+    height: 600px;
+  }
+  .hero__inner {
+    max-width: fit-content;
+    margin-left: 16px;
+    margin-right: 16px;
+    text-align: center;
+  }
+
+  .hero__content {
+    align-items: center;
+  }
+
+  .hero__heading {
+    font-size: 30px;
+    line-height: 36px;
+  }
 }

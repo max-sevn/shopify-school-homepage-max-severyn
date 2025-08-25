@@ -187,6 +187,23 @@ function productSetup() {
         productSection.innerHTML = `
         ${renderProduct(productsData, getId)}
         `;
+        //re-setup swiper
+        if (document.querySelector(".product__gallery-swiper")) {
+          new Swiper(".product__gallery-swiper", {
+            direction: "horizontal",
+            spaceBetween: 16,
+            allowTouchMove: true,
+            slidesPerView: 3.45,
+            breakpoints: {
+              1280: {
+                direction: "vertical",
+                slidesPerView: 5,
+                spaceBetween: 24,
+                allowTouchMove: false,
+              },
+            },
+          });
+        }
         productSetup();
       }
     }
@@ -203,11 +220,12 @@ function renderProduct(data, id = 1) {
   const currentProduct = data.filter((item) => item.id === id)[0];
   return `
    <div class="product__gallery">
-      <div class="product__gallery-list">
+      <div class="swiper product__gallery-swiper">
+      <div class="swiper-wrapper product__gallery-list">
         ${currentProduct.images
           .map(
             (image, index) => `
-        <button class="product__gallery-item">
+        <button class="swiper-slide product__gallery-item">
           <img
             class="product__gallery-image"
             src="${image}"
@@ -218,6 +236,7 @@ function renderProduct(data, id = 1) {
         `
           )
           .join("")}
+      </div>
       </div>
       <div class="product__gallery-preview">
         <img

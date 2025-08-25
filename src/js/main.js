@@ -25,14 +25,47 @@ function renderContent(page) {
 
       if (document.querySelector(".collection__swiper")) {
         new Swiper(".collection__swiper", {
-          slidesPerView: 4,
           loop: true,
           spaceBetween: 24,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            clickable: true,
+          breakpoints: {
+            0: {
+              slidesPerView: 1.1,
+              navigation: false,
+              allowTouchMove: true,
+              spaceBetween: 16,
+            },
+
+            768: {
+              slidesPerView: 2.5,
+              navigation: false,
+              allowTouchMove: true,
+            },
+            1280: {
+              slidesPerView: 4,
+              navigation: {
+                nextEl: ".swiper-button-next",
+                clickable: true,
+              },
+              allowTouchMove: false,
+            },
           },
-          allowTouchMove: false,
+        });
+      }
+
+      if (document.querySelector(".product__gallery-swiper")) {
+        new Swiper(".product__gallery-swiper", {
+          direction: "horizontal",
+          spaceBetween: 16,
+          allowTouchMove: true,
+          slidesPerView: 3.45,
+          breakpoints: {
+            1280: {
+              direction: "vertical",
+              slidesPerView: 5,
+              spaceBetween: 24,
+              allowTouchMove: false,
+            },
+          },
         });
       }
       break;

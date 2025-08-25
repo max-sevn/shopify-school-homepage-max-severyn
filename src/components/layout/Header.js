@@ -6,6 +6,9 @@ export function Header() {
   <a class="header__logo logo" href="#">
     <img class="header__image" src="/src/assets/logo.svg" alt="logo" />
   </a>
+   <button class="header__hamburger">
+    <img class="header__hamburger-icon" src="/src/assets/icons/hamburger.svg" alt="hamburger" />
+  </button>
   <nav class="header__menu">
     <ul class="header__menu-list">
       <li class="header__menu-item">
