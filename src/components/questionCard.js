@@ -1,7 +1,7 @@
 export function QuestionCard({ heading, content }) {
   return `
     <div class="faq__accordion-item">
-      <button class="faq__accordion-header">
+      <button class="accordion-header faq__accordion-header">
         <h2 class="faq__accordion-heading">${heading}</h2>
         <img
           class="faq__accordion-icon"
@@ -9,7 +9,7 @@ export function QuestionCard({ heading, content }) {
           alt="expandPlusIcon"
         />
       </button>
-      <div class="faq__accordion-content">
+      <div class="accordion-content faq__accordion-content">
         <p>${content}</p>
       </div>
     </div>

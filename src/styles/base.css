@@ -51,3 +51,16 @@ ul {
   cursor: pointer;
   background-color: #737373;
 }
+
+.accordion-header {
+  font-family: inherit;
+  border: 0;
+  background-color: unset;
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s ease;
+}

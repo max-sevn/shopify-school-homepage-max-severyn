@@ -59,6 +59,9 @@ function renderContent(page) {
           allowTouchMove: true,
           slidesPerView: 3.45,
           breakpoints: {
+            540: {
+              allowTouchMove: false,
+            },
             1280: {
               direction: "vertical",
               slidesPerView: 5,

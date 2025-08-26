@@ -104,8 +104,11 @@ export function Footer() {
   const navigationMenu = (currentNavigationData) => {
     return `
    <nav class="footer__menu">
+      <button class="accordion-header footer__accordion-header">
       <h1 class="footer__heading">${currentNavigationData.heading}</h1>
-      <ul class="footer__list">
+      <img class="footer__icon" src="/src/assets/icons/chevron.svg" />
+      </button>
+      <ul class="accordion-content footer__list">
         ${currentNavigationData.navigationLinks
           .map(
             (currentLink) => `
@@ -152,3 +155,27 @@ export function Footer() {
   </footer>
     `;
 }
+
+requestAnimationFrame(() => {
+  //accordion logic
+  const navContainer = document.querySelector(".footer__menu");
+  if (navContainer) {
+    document.querySelectorAll(".footer__accordion-header").forEach((header) => {
+      header.addEventListener("click", () => {
+        const contentBlock = header.nextElementSibling;
+        const collapseIcon = header.lastElementChild;
+        if (contentBlock.style.maxHeight) {
+          //collapse accordion content
+          contentBlock.style.maxHeight = null;
+          collapseIcon.style.transform = "rotate(0deg)";
+        } else {
+          //expand to full height accordion content
+          contentBlock.style.maxHeight = contentBlock.scrollHeight + "px";
+          collapseIcon.style.transform = "rotate(180deg)";
+        }
+        const item = header.parentElement;
+        item.classList.toggle("active");
+      });
+    });
+  }
+});
