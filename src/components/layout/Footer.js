@@ -156,7 +156,7 @@ export function Footer() {
     `;
 }
 
-requestAnimationFrame(() => {
+export function initFooter() {
   //accordion logic
   const navContainer = document.querySelector(".footer__menu");
   if (navContainer) {
@@ -178,4 +178,4 @@ requestAnimationFrame(() => {
       });
     });
   }
-});
+}

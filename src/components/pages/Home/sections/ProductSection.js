@@ -302,6 +302,25 @@ function renderProduct(data, id = 1) {
     `;
 }
 
-requestAnimationFrame(() => {
+export function initProductSection() {
   productSetup();
-});
+  if (document.querySelector(".product__gallery-swiper")) {
+    new Swiper(".product__gallery-swiper", {
+      direction: "horizontal",
+      spaceBetween: 16,
+      allowTouchMove: true,
+      slidesPerView: 3.45,
+      breakpoints: {
+        540: {
+          allowTouchMove: false,
+        },
+        1280: {
+          direction: "vertical",
+          slidesPerView: 5,
+          spaceBetween: 24,
+          allowTouchMove: false,
+        },
+      },
+    });
+  }
+}

@@ -46,3 +46,34 @@ export function CollectionSection() {
     </section> 
     `;
 }
+
+export function initCollectionSection() {
+  if (document.querySelector(".collection__swiper")) {
+    new Swiper(".collection__swiper", {
+      loop: true,
+      spaceBetween: 24,
+      breakpoints: {
+        0: {
+          slidesPerView: 1.1,
+          navigation: false,
+          allowTouchMove: true,
+          spaceBetween: 16,
+        },
+
+        768: {
+          slidesPerView: 2.5,
+          navigation: false,
+          allowTouchMove: true,
+        },
+        1280: {
+          slidesPerView: 4,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            clickable: true,
+          },
+          allowTouchMove: false,
+        },
+      },
+    });
+  }
+}

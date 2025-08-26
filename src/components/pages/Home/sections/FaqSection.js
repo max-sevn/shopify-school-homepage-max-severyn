@@ -43,7 +43,7 @@ export function FaqSection() {
     `;
 }
 
-requestAnimationFrame(() => {
+export function initFaqSection() {
   //accordion logic
   const faqContainer = document.querySelector(".faq__accordion");
   if (faqContainer) {
@@ -65,4 +65,4 @@ requestAnimationFrame(() => {
       });
     });
   }
-});
+}

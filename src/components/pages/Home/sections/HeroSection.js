@@ -38,3 +38,16 @@ export function HeroSection() {
     </section>
     `;
 }
+
+export function initHeroSection() {
+  if (document.querySelector(".hero__swiper")) {
+    new Swiper(".hero__swiper", {
+      loop: true,
+      autoplay: { delay: 5000 },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  }
+}

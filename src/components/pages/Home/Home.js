@@ -1,12 +1,11 @@
-import { HeroSection } from "./sections/HeroSection";
-import { CollectionSection } from "./sections/CollectionSection";
-import { FaqSection } from "./sections/FaqSection";
-import { ProductSection } from "./sections/ProductSection";
-import { FormSection } from "./sections/FormSection";
-
-function test() {
-  console.log("test");
-}
+import { HeroSection, initHeroSection } from "./sections/HeroSection";
+import {
+  CollectionSection,
+  initCollectionSection,
+} from "./sections/CollectionSection";
+import { FaqSection, initFaqSection } from "./sections/FaqSection";
+import { ProductSection, initProductSection } from "./sections/ProductSection";
+import { FormSection, initFormSection } from "./sections/FormSection";
 
 export function Home() {
   return `
@@ -18,10 +17,10 @@ ${FormSection()}
     `;
 }
 
-// binding the event after rendering
-requestAnimationFrame(() => {
-  const btn = document.querySelector(`[btn-id="hero-button-id"]`);
-  if (btn) {
-    btn.addEventListener("click", test);
-  }
-});
+export function initHome() {
+  initHeroSection();
+  initCollectionSection();
+  initFaqSection();
+  initProductSection();
+  initFormSection();
+}
