@@ -133,7 +133,7 @@ export function Footer() {
   <footer class="footer">
       <div class="footer__wrapper">${navigationHTML}</div>
       <div class="footer__misc">
-        <span class="footer__misc-copyright">© 2025 Nike, Inc. All rights reserved</span>
+        <span class="footer__misc-copyright">© 2025 Stellar Soft. All rights reserved</span>
         <nav class="footer__misc-navigation">
           <ul class="footer__misc-list">
             <li class="footer__misc-item">

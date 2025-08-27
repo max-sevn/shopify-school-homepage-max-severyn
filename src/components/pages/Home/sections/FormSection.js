@@ -68,6 +68,7 @@ export function initFormSection() {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       if (form.checkValidity()) {
+        alert("Thank you!");
         form.reset();
       }
     });
