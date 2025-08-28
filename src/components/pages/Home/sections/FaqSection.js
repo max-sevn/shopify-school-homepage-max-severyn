@@ -32,7 +32,7 @@ export function FaqSection() {
   return `
     <section class="faq">
       <div class="faq__content">
-        <h1 class="faq__heading">Frequently asked questions</h1>
+        <h2 class="faq__heading">Frequently asked questions</h2>
         <p class="faq__text">
           Answers to our most frequently asked questions are just one click
           away.

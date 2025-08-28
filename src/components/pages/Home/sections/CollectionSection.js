@@ -32,7 +32,7 @@ export function CollectionSection() {
 
   return `
     <section class="collection">
-      <h1 class="collection__heading">Featured Collection</h1>
+      <h2 class="collection__heading">Featured Collection</h2>
       <div class='collection__wrapper'>
       <div class="swiper collection__swiper">
         <div class="swiper-wrapper collection__list">

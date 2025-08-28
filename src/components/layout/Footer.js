@@ -105,7 +105,7 @@ export function Footer() {
     return `
    <nav class="footer__menu">
       <button class="accordion-header footer__accordion-header">
-      <h1 class="footer__heading">${currentNavigationData.heading}</h1>
+      <h2 class="footer__heading">${currentNavigationData.heading}</h2>
       <img class="footer__icon" src="/src/assets/icons/chevron.svg" />
       </button>
       <ul class="accordion-content footer__list">
