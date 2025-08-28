@@ -1,4 +1,4 @@
-import "@/styles/components/form.css";
+import "@/styles/sections/form.css";
 import { Button } from "@/components/ui/Button";
 
 export function FormSection() {
