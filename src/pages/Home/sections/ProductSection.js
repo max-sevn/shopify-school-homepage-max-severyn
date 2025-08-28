@@ -223,29 +223,37 @@ function renderProduct(data, id = 1) {
   const currentProduct = data.filter((item) => item.id === id)[0];
   return `
    <div class="product__gallery">
-      <div class="swiper product__gallery-swiper" role="list" aria-label="Product image gallery">
-      <div class="swiper-wrapper product__gallery-list">
-        ${currentProduct.images
-          .map(
-            (image, index) => `
-        <button class="swiper-slide product__gallery-item">
-          <img
-            class="product__gallery-image"
-            src="${image}"
-            alt="${currentProduct.product + index}"
-          />
-          <div class="product__gallery-overlay"></div>
-        </button>
-        `
-          )
-          .join("")}
+      <div
+        class="swiper product__gallery-swiper"
+        role="list"
+        aria-label="Product image gallery"
+      >
+        <div class="swiper-wrapper product__gallery-list">
+          ${currentProduct.images
+            .map(
+              (image, index) => `
+          <button class="swiper-slide product__gallery-item">
+            <img
+              class="product__gallery-image"
+              src="${image}"
+              alt="${currentProduct.product + index}"
+            />
+            <div class="product__gallery-overlay"></div>
+          </button>
+          `
+            )
+            .join("")}
+        </div>
       </div>
-      </div>
-      <div class="product__gallery-preview" role="preview" aria-label="Product image preview">
+      <div
+        class="product__gallery-preview"
+        role="preview"
+        aria-label="Product image preview"
+      >
         <img
           class="product__gallery-preview-image"
           src="${currentProduct.images[0]}"
-          alt=${currentProduct.product}
+          alt="${currentProduct.product}"
         />
         <div class="product__gallery-badge">
           <img
@@ -262,13 +270,20 @@ function renderProduct(data, id = 1) {
         <h2 class="product__main-heading">${currentProduct.product}</h2>
         <p class="product__main-price">${currentProduct.price}</p>
       </div>
-      <div class="product__main-variants" role="list" aria-label="Product variants">
+      <div
+        class="product__main-variants"
+        role="list"
+        aria-label="Product variants"
+      >
         ${productsData
           .map(
             (product, index) => `
-        <button class="product__main-variant" product-id="${
-          product.id
-        }" role="group" aria-label="${index + 1} / ${productsData.length}">
+        <button
+          class="product__main-variant"
+          product-id="${product.id}"
+          role="group"
+          aria-label="${index + 1} / ${productsData.length}"
+        >
           <img
             class="product__main-variant-image"
             src="${product.images[0]}"
@@ -285,9 +300,13 @@ function renderProduct(data, id = 1) {
           ${currentProduct.sizes
             .map(
               (item, index) => `
-          <button class="product__main-size-variant" role="group" aria-label="${
-            index + 1
-          } / ${currentProduct.sizes.length}">${item.size}</button>
+          <button
+            class="product__main-size-variant"
+            role="group"
+            aria-label="${index + 1} / ${currentProduct.sizes.length}"
+          >
+            ${item.size}
+          </button>
           `
             )
             .join("")}
@@ -303,7 +322,7 @@ function renderProduct(data, id = 1) {
         Let your attitude have the edge in your Nike Air Max Plus, a Tuned Air
         experience that offers premium stability and unbelievable cushioning.
       </p>
-   </div>
+    </div>
     `;
 }
 
