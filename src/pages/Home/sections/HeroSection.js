@@ -1,5 +1,8 @@
 import "@/styles/sections/hero.css";
-import { Button } from "@/components//ui/Button";
+import { Button } from "@/components/ui/Button";
+import heroImage1 from "@/assets/images/heroImage-1.jpg";
+import heroImage2 from "@/assets/images/heroImage-2.jpg";
+import heroImage3 from "@/assets/images/heroImage-3.jpg";
 
 export function HeroSection() {
   return `
@@ -8,15 +11,15 @@ export function HeroSection() {
         <div class="swiper-wrapper hero__slides-wrapper">
           <div
             class="swiper-slide hero__slide"
-            style="background-image: url('/src/assets/images/heroImage-1.jpg')"
+            style="background-image: url('${heroImage1}')"
           ></div>
           <div
             class="swiper-slide hero__slide"
-            style="background-image: url('/src/assets/images/heroImage-2.jpg')"
+            style="background-image: url('${heroImage2}')"
           ></div>
           <div
             class="swiper-slide hero__slide"
-            style="background-image: url('/src/assets/images/heroImage-3.jpg')"
+            style="background-image: url('${heroImage3}')"
           ></div>
         </div>
         <div class="hero__inner">

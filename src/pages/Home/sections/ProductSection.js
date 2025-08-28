@@ -1,5 +1,21 @@
 import "@/styles/sections/product.css";
 import { Button } from "@/components/ui/Button";
+import starIcon from "@/assets/icons/star.svg";
+import productImageColor1Variant1 from "@/assets/images/product/color1variant1.jpg";
+import productImageColor1Variant2 from "@/assets/images/product/color1variant2.jpg";
+import productImageColor1Variant3 from "@/assets/images/product/color1variant3.jpg";
+import productImageColor1Variant4 from "@/assets/images/product/color1variant4.jpg";
+import productImageColor1Variant5 from "@/assets/images/product/color1variant5.jpg";
+import productImageColor2Variant1 from "@/assets/images/product/color2variant1.jpg";
+import productImageColor2Variant2 from "@/assets/images/product/color2variant2.jpg";
+import productImageColor2Variant3 from "@/assets/images/product/color2variant3.jpg";
+import productImageColor2Variant4 from "@/assets/images/product/color2variant4.jpg";
+import productImageColor2Variant5 from "@/assets/images/product/color2variant5.jpg";
+import productImageColor3Variant1 from "@/assets/images/product/color3variant1.jpg";
+import productImageColor3Variant2 from "@/assets/images/product/color3variant2.jpg";
+import productImageColor3Variant3 from "@/assets/images/product/color3variant3.jpg";
+import productImageColor3Variant4 from "@/assets/images/product/color3variant4.jpg";
+import productImageColor3Variant5 from "@/assets/images/product/color3variant5.jpg";
 
 const productsData = [
   {
@@ -7,11 +23,11 @@ const productsData = [
     product: "Nike Air Max Plus White",
     price: "$280.00",
     images: [
-      "/src/assets/images/product/color1variant1.jpg",
-      "/src/assets/images/product/color1variant2.jpg",
-      "/src/assets/images/product/color1variant3.jpg",
-      "/src/assets/images/product/color1variant4.jpg",
-      "/src/assets/images/product/color1variant5.jpg",
+      `${productImageColor1Variant1}`,
+      `${productImageColor1Variant2}`,
+      `${productImageColor1Variant3}`,
+      `${productImageColor1Variant4}`,
+      `${productImageColor1Variant5}`,
     ],
     sizes: [
       {
@@ -45,11 +61,11 @@ const productsData = [
     product: "Nike Air Max Plus Black",
     price: "$320.00",
     images: [
-      "/src/assets/images/product/color2variant1.jpg",
-      "/src/assets/images/product/color2variant2.jpg",
-      "/src/assets/images/product/color2variant3.jpg",
-      "/src/assets/images/product/color2variant4.jpg",
-      "/src/assets/images/product/color2variant5.jpg",
+      `${productImageColor2Variant1}`,
+      `${productImageColor2Variant2}`,
+      `${productImageColor2Variant3}`,
+      `${productImageColor2Variant4}`,
+      `${productImageColor2Variant5}`,
     ],
     sizes: [
       {
@@ -83,11 +99,11 @@ const productsData = [
     product: "Nike Air Max Plus Pink",
     price: "$260.00",
     images: [
-      "/src/assets/images/product/color3variant1.jpg",
-      "/src/assets/images/product/color3variant2.jpg",
-      "/src/assets/images/product/color3variant3.jpg",
-      "/src/assets/images/product/color3variant4.jpg",
-      "/src/assets/images/product/color3variant5.jpg",
+      `${productImageColor3Variant1}`,
+      `${productImageColor3Variant2}`,
+      `${productImageColor3Variant3}`,
+      `${productImageColor3Variant4}`,
+      `${productImageColor3Variant5}`,
     ],
     sizes: [
       {
@@ -258,7 +274,7 @@ function renderProduct(data, id = 1) {
         <div class="product__gallery-badge">
           <img
             class="product__gallery-badge-icon"
-            src="/src/assets/icons/star.svg"
+            src="${starIcon}"
             alt="Icon Star"
           />
           <span class="product__gallery-badge-text">Highly Rated</span>

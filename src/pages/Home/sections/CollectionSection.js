@@ -1,25 +1,30 @@
 import "@/styles/sections/collection.css";
 import { CollectionCard } from "@/components/collectionCard";
+import rightArrowIcon from "@/assets/icons/arrow-right.svg";
+import collectionImage1 from "@/assets/images/collection-1.jpg";
+import collectionImage2 from "@/assets/images/collection-2.jpg";
+import collectionImage3 from "@/assets/images/collection-3.jpg";
+import collectionImage4 from "@/assets/images/collection-4.jpg";
 
 export function CollectionSection() {
   const collectionsData = [
     {
-      src: "/src/assets/images/collection-1.jpg",
+      src: collectionImage1,
       heading: "Nike Streakfly 2",
       price: "300",
     },
     {
-      src: "/src/assets/images/collection-2.jpg",
+      src: collectionImage2,
       heading: "Nike Pegasus Premium",
       price: "350",
     },
     {
-      src: "/src/assets/images/collection-3.jpg",
+      src: collectionImage3,
       heading: "Nike Pegasus 41",
       price: "280",
     },
     {
-      src: "/src/assets/images/collection-4.jpg",
+      src: collectionImage4,
       heading: "Nike Revolution 7",
       price: "440",
     },
@@ -40,7 +45,7 @@ export function CollectionSection() {
         </div>
       </div>
       <div class="swiper-button-next collection__button-next" aria-label="Next product">
-            <img src="/src/assets/icons/arrow-right.svg" alt="Icon arrow-right" />
+            <img src="${rightArrowIcon}" alt="Icon arrow-right" />
         </div>
       <div>
     </section> 

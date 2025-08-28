@@ -1,13 +1,16 @@
 import "@/styles/header.css";
+import logo from "@/assets/logo.svg";
+import cart from "@/assets/icons/cart.svg";
+import hamburger from "@/assets/icons/hamburger.svg";
 
 export function Header() {
   return `
 <header class="header">
   <a class="header__logo logo" href="#">
-    <img class="header__image" src="/src/assets/logo.svg" alt="Logo" />
+    <img class="header__image" src="${logo}" alt="Logo" />
   </a>
    <button class="header__hamburger">
-    <img class="header__hamburger-icon" src="/src/assets/icons/hamburger.svg" alt="Hamburger menu" />
+    <img class="header__hamburger-icon" src="${hamburger}" alt="Hamburger menu" />
   </button>
   <nav class="header__menu" aria-label="Main navigation">
     <ul class="header__menu-list">
@@ -28,7 +31,7 @@ export function Header() {
   <a class="header__cart cart" href="#" aria-lable="Shopping cart">
     <img
       class="header__icon-cart"
-      src="/src/assets/icons/cart.svg"
+      src="${cart}"
       alt="Cart"
     />
   </a>

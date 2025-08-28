@@ -1,5 +1,7 @@
 import "@/styles/sections/faq.css";
 import { QuestionCard } from "@/components/questionCard";
+import plusCircleIcon from "@/assets/icons/plus-circle.svg";
+import minusCircleIcon from "@/assets/icons/minus-circle.svg";
 
 export function FaqSection() {
   const questionsData = [
@@ -54,12 +56,12 @@ export function initFaqSection() {
         if (contentBlock.style.maxHeight) {
           //collapse accordion content
           contentBlock.style.maxHeight = null;
-          collapseIcon.src = "/src/assets/icons/plus-circle.svg";
+          collapseIcon.src = `${plusCircleIcon}`;
           header.setAttribute("aria-expanded", "false");
         } else {
           //expand to full height accordion content
           contentBlock.style.maxHeight = contentBlock.scrollHeight + "px";
-          collapseIcon.src = "/src/assets/icons/minus-circle.svg";
+          collapseIcon.src = `${minusCircleIcon}`;
           header.setAttribute("aria-expanded", "true");
         }
         const item = header.parentElement;

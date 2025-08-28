@@ -1,3 +1,5 @@
+import plusCircleIcon from "@/assets/icons/plus-circle.svg";
+
 export function QuestionCard({ heading, content }, index) {
   return `
     <div class="faq__accordion-item">
@@ -5,7 +7,7 @@ export function QuestionCard({ heading, content }, index) {
         <h2 class="faq__accordion-heading">${heading}</h2>
         <img
           class="faq__accordion-icon"
-          src="/src/assets/icons/plus-circle.svg"
+          src="${plusCircleIcon}"
           alt="Icon expand"
         />
       </button>

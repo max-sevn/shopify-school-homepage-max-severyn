@@ -1,4 +1,6 @@
 import "@/styles/components/popup.css";
+import closeIcon from "@/assets/icons/close.svg";
+import popupImage from "@/assets/images/popup/popup-1.jpg";
 
 import { Button } from "@/components/ui/Button";
 
@@ -34,9 +36,9 @@ export function Popup() {
           })}
         </form>
         </div>
-        <img class="popup__image" src="/src/assets/images/popup/popup-1.jpg" />
+        <img class="popup__image" src="${popupImage}" />
         <button class="popup__close">
-          <img class="popup__close-icon" src="/src/assets/icons/close.svg" />
+          <img class="popup__close-icon" src="${closeIcon}" />
         </button>
       </div>
     </div>
