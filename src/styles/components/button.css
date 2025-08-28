@@ -1,0 +1,35 @@
+.button {
+  width: fit-content;
+  padding: 16px 32px;
+  font-family: inherit;
+  font-size: var(--font-size-text-lg);
+  line-height: var(--line-height-text-lg);
+  font-weight: var(--font-weight-regular);
+  border: 0;
+  border-radius: 8px;
+}
+
+.button-wide {
+  width: 100%;
+}
+
+.button--light {
+  background-color: var(--color-white);
+  transition: 0.2s ease-in-out;
+}
+
+.button--light:hover {
+  cursor: pointer;
+  background-color: var(--color-gray-200);
+}
+
+.button--dark {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transition: 0.2s ease-in-out;
+}
+
+.button--dark:hover {
+  cursor: pointer;
+  background-color: var(--color-gray-300);
+}

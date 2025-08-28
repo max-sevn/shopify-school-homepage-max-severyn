@@ -1,4 +1,4 @@
-import "../../styles/components/footer.css";
+import "@/styles/components/footer.css";
 
 export function Footer() {
   const navigationData = [
@@ -101,14 +101,14 @@ export function Footer() {
     },
   ];
 
-  const navigationMenu = (currentNavigationData) => {
+  const navigationMenu = (currentNavigationData, index) => {
     return `
-   <nav class="footer__menu">
-      <button class="accordion-header footer__accordion-header">
+   <nav class="footer__menu" aria-label="Footer primary navigation">
+      <button class="accordion-header footer__accordion-header" aria-expanded="false" aria-controls="nav${index}">
       <h2 class="footer__heading">${currentNavigationData.heading}</h2>
-      <img class="footer__icon" src="/src/assets/icons/chevron.svg" />
+      <img class="footer__icon" src="/src/assets/icons/chevron.svg" alt="Icon chevron" />
       </button>
-      <ul class="accordion-content footer__list">
+      <ul id="nav${index}" class="accordion-content footer__list" role="region">
         ${currentNavigationData.navigationLinks
           .map(
             (currentLink) => `
@@ -126,7 +126,7 @@ export function Footer() {
   };
 
   const navigationHTML = navigationData
-    .map((currentData) => navigationMenu(currentData))
+    .map((currentData, index) => navigationMenu(currentData, index + 1))
     .join("");
 
   return `
@@ -134,7 +134,7 @@ export function Footer() {
       <div class="footer__wrapper">${navigationHTML}</div>
       <div class="footer__misc">
         <span class="footer__misc-copyright">© 2025 Stellar Soft. All rights reserved</span>
-        <nav class="footer__misc-navigation">
+        <nav class="footer__misc-navigation" aria-label="Footer secondary navigation">
           <ul class="footer__misc-list">
             <li class="footer__misc-item">
               <a class="footer__misc-link" href="#">Terms & Use</a>
@@ -168,10 +168,12 @@ export function initFooter() {
           //collapse accordion content
           contentBlock.style.maxHeight = null;
           collapseIcon.style.transform = "rotate(0deg)";
+          header.setAttribute("aria-expanded", "false");
         } else {
           //expand to full height accordion content
           contentBlock.style.maxHeight = contentBlock.scrollHeight + "px";
           collapseIcon.style.transform = "rotate(180deg)";
+          header.setAttribute("aria-expanded", "true");
         }
         const item = header.parentElement;
         item.classList.toggle("active");

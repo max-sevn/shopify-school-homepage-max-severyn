@@ -1,6 +1,6 @@
-import "../styles/components/popup.css";
+import "@/styles/components/popup.css";
 
-import { Button } from "./ui/Button";
+import { Button } from "@/components/ui/Button";
 
 export function Popup() {
   return `

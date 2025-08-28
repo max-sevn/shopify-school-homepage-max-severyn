@@ -1,5 +1,5 @@
-import "../../../../styles/components/sections/faq.css";
-import { QuestionCard } from "../../../questionCard";
+import "@/styles/components/sections/faq.css";
+import { QuestionCard } from "@/components/questionCard";
 
 export function FaqSection() {
   const questionsData = [
@@ -26,11 +26,11 @@ export function FaqSection() {
   ];
 
   const questionsHTML = questionsData
-    .map((card) => QuestionCard(card))
+    .map((card, index) => QuestionCard(card, index + 1))
     .join("");
 
   return `
-    <section class="faq">
+    <section class="faq" aria-lable="FAQ">
       <div class="faq__content">
         <h2 class="faq__heading">Frequently asked questions</h2>
         <p class="faq__text">
@@ -55,10 +55,12 @@ export function initFaqSection() {
           //collapse accordion content
           contentBlock.style.maxHeight = null;
           collapseIcon.src = "/src/assets/icons/plus-circle.svg";
+          header.setAttribute("aria-expanded", "false");
         } else {
           //expand to full height accordion content
           contentBlock.style.maxHeight = contentBlock.scrollHeight + "px";
           collapseIcon.src = "/src/assets/icons/minus-circle.svg";
+          header.setAttribute("aria-expanded", "true");
         }
         const item = header.parentElement;
         item.classList.toggle("active");

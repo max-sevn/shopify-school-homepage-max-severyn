@@ -1,3 +1,4 @@
+import "../../styles/components/button.css";
 export function Button({
   blockClass,
   label,

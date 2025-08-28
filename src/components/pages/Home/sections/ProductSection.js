@@ -1,5 +1,5 @@
-import "../../../../styles/components/sections/product.css";
-import { Button } from "../../../ui/Button";
+import "@/styles/components/sections/product.css";
+import { Button } from "@/components/ui/Button";
 
 const productsData = [
   {
@@ -120,7 +120,7 @@ const productsData = [
 
 export function ProductSection() {
   return `
-    <section class="product">
+    <section class="product" aria-label="Product details">
       ${renderProduct(productsData)}
     </section>
     `;
@@ -223,7 +223,7 @@ function renderProduct(data, id = 1) {
   const currentProduct = data.filter((item) => item.id === id)[0];
   return `
    <div class="product__gallery">
-      <div class="swiper product__gallery-swiper">
+      <div class="swiper product__gallery-swiper" role="list" aria-label="Product image gallery">
       <div class="swiper-wrapper product__gallery-list">
         ${currentProduct.images
           .map(
@@ -241,16 +241,17 @@ function renderProduct(data, id = 1) {
           .join("")}
       </div>
       </div>
-      <div class="product__gallery-preview">
+      <div class="product__gallery-preview" role="preview" aria-label="Product image preview">
         <img
           class="product__gallery-preview-image"
           src="${currentProduct.images[0]}"
-          alt="previewImage"
+          alt=${currentProduct.product}
         />
         <div class="product__gallery-badge">
           <img
             class="product__gallery-badge-icon"
             src="/src/assets/icons/star.svg"
+            alt="Icon Star"
           />
           <span class="product__gallery-badge-text">Highly Rated</span>
         </div>
@@ -261,28 +262,32 @@ function renderProduct(data, id = 1) {
         <h2 class="product__main-heading">${currentProduct.product}</h2>
         <p class="product__main-price">${currentProduct.price}</p>
       </div>
-      <div class="product__main-variants">
+      <div class="product__main-variants" role="list" aria-label="Product variants">
         ${productsData
           .map(
-            (product) => `
-        <button class="product__main-variant" product-id="${product.id}">
+            (product, index) => `
+        <button class="product__main-variant" product-id="${
+          product.id
+        }" role="group" aria-label="${index + 1} / ${productsData.length}">
           <img
             class="product__main-variant-image"
             src="${product.images[0]}"
-            alt="variant"
+            alt="${product.product}"
           />
         </button>
         `
           )
           .join("")}
       </div>
-      <div class="product__main-size">
+      <div class="product__main-size" role="list" aria-label="Product sizes">
         <label class="product__main-size-label">Select Size:</label>
         <div class="product__main-size-variants">
           ${currentProduct.sizes
             .map(
-              (item) => `
-          <button class="product__main-size-variant">${item.size}</button>
+              (item, index) => `
+          <button class="product__main-size-variant" role="group" aria-label="${
+            index + 1
+          } / ${currentProduct.sizes.length}">${item.size}</button>
           `
             )
             .join("")}

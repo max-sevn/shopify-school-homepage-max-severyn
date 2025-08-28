@@ -1,10 +1,10 @@
-import "../../../../styles/components/sections/hero.css";
-import { Button } from "../../../ui/Button";
+import "@/styles/components/sections/hero.css";
+import { Button } from "@/components//ui/Button";
 
 export function HeroSection() {
   return `
-    <section class="hero">
-      <div class="swiper hero__swiper">
+    <section class="hero" aria-label="Hero banner">
+      <div class="swiper hero__swiper" role="region" aria-roledescription="carousel" aria-label="Brand images">
         <div class="swiper-wrapper hero__slides-wrapper">
           <div
             class="swiper-slide hero__slide"
@@ -33,7 +33,7 @@ export function HeroSection() {
             ${Button({ blockClass: "hero", label: "Shop the Collection" })}
           </div>
         </div>
-        <div class="swiper-pagination hero__pagination"></div>
+        <div class="swiper-pagination hero__pagination" aria-label="Slides pagination"></div>
       </div>
     </section>
     `;

@@ -1,8 +1,8 @@
-import "../styles/base.css";
-import { Header } from "../components/layout/Header";
-import { Footer, initFooter } from "../components/layout/Footer";
-import { Home, initHome } from "../components/pages/Home/Home";
-import { initPopup, Popup } from "../components/popup";
+import "@/styles/base.css";
+import { Header } from "@/components/layout/Header";
+import { Footer, initFooter } from "@/components/layout/Footer";
+import { Home, initHome } from "@/components/pages/Home/Home";
+import { initPopup, Popup } from "@/components/popup";
 
 document.querySelector("#popup").innerHTML = Popup();
 initPopup();

@@ -1,5 +1,5 @@
-import "../../../../styles/components/sections/collection.css";
-import { CollectionCard } from "../../../collectionCard";
+import "@/styles/components/sections/collection.css";
+import { CollectionCard } from "@/components/collectionCard";
 
 export function CollectionSection() {
   const collectionsData = [
@@ -31,16 +31,16 @@ export function CollectionSection() {
     .join("");
 
   return `
-    <section class="collection">
+    <section class="collection" aria-label="Featured products">
       <h2 class="collection__heading">Featured Collection</h2>
       <div class='collection__wrapper'>
-      <div class="swiper collection__swiper">
+      <div class="swiper collection__swiper" role="region" aria-roledescription="carousel">
         <div class="swiper-wrapper collection__list">
           ${collectionsHTML}
         </div>
       </div>
-      <div class="swiper-button-next collection__button-next">
-            <img src="/src/assets/icons/arrow-right.svg" alt="arrowRight" />
+      <div class="swiper-button-next collection__button-next" aria-label="Next product">
+            <img src="/src/assets/icons/arrow-right.svg" alt="Icon arrow-right" />
         </div>
       <div>
     </section> 

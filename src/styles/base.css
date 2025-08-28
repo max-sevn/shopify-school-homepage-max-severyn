@@ -1,3 +1,5 @@
+@import "../styles/components/accordion.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -43,53 +45,4 @@ ul {
 
   --font-weight-regular: 400;
   --font-weight-bold: 700;
-}
-
-.button {
-  width: fit-content;
-  padding: 16px 32px;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  border: 0;
-  border-radius: 8px;
-}
-
-.button-wide {
-  width: 100%;
-}
-
-.button--light {
-  background-color: #ffffff;
-  transition: 0.2s ease-in-out;
-}
-
-.button--light:hover {
-  cursor: pointer;
-  background-color: #cacacb;
-}
-
-.button--dark {
-  background-color: #111111;
-  color: #ffffff;
-  transition: 0.2s ease-in-out;
-}
-
-.button--dark:hover {
-  cursor: pointer;
-  background-color: #737373;
-}
-
-.accordion-header {
-  font-family: inherit;
-  border: 0;
-  background-color: unset;
-  cursor: pointer;
-}
-
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: 0.3s ease;
 }

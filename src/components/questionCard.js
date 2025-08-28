@@ -1,15 +1,15 @@
-export function QuestionCard({ heading, content }) {
+export function QuestionCard({ heading, content }, index) {
   return `
     <div class="faq__accordion-item">
-      <button class="accordion-header faq__accordion-header">
+      <button class="accordion-header faq__accordion-header" aria-expanded="false" aria-controls="faq${index}">
         <h2 class="faq__accordion-heading">${heading}</h2>
         <img
           class="faq__accordion-icon"
           src="/src/assets/icons/plus-circle.svg"
-          alt="expandPlusIcon"
+          alt="Icon expand"
         />
       </button>
-      <div class="accordion-content faq__accordion-content">
+      <div id="faq${index}" class="accordion-content faq__accordion-content" role="region">
         <p>${content}</p>
       </div>
     </div>

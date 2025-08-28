@@ -1,9 +1,9 @@
-import "../../../../styles/components/form.css";
-import { Button } from "../../../ui/Button";
+import "@/styles/components/form.css";
+import { Button } from "@/components/ui/Button";
 
 export function FormSection() {
   return `
-    <section class="form">
+    <section class="form" aria-lable="Contact form">
       <h2 class="form__heading">Need Help?</h2>
      <form class="form__contact">
       <div class="form__contact-row">
