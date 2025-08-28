@@ -1,4 +1,4 @@
-import "@/styles/components/sections/collection.css";
+import "@/styles/sections/collection.css";
 import { CollectionCard } from "@/components/collectionCard";
 
 export function CollectionSection() {

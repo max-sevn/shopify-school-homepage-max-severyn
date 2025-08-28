@@ -1,4 +1,4 @@
-import "@/styles/components/footer.css";
+import "@/styles/footer.css";
 
 export function Footer() {
   const navigationData = [

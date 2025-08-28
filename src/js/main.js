@@ -1,7 +1,7 @@
 import "@/styles/base.css";
-import { Header } from "@/components/layout/Header";
-import { Footer, initFooter } from "@/components/layout/Footer";
-import { Home, initHome } from "@/components/pages/Home/Home";
+import { Header } from "@/layout/Header";
+import { Footer, initFooter } from "@/layout/Footer";
+import { Home, initHome } from "@/pages/Home/Home";
 import { initPopup, Popup } from "@/components/popup";
 
 document.querySelector("#popup").innerHTML = Popup();

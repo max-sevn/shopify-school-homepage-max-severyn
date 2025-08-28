@@ -1,4 +1,4 @@
-import "@/styles/components/sections/hero.css";
+import "@/styles/sections/hero.css";
 import { Button } from "@/components//ui/Button";
 
 export function HeroSection() {

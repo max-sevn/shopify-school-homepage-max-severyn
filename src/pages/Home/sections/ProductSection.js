@@ -1,4 +1,4 @@
-import "@/styles/components/sections/product.css";
+import "@/styles/sections/product.css";
 import { Button } from "@/components/ui/Button";
 
 const productsData = [

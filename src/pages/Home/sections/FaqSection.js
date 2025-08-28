@@ -1,4 +1,4 @@
-import "@/styles/components/sections/faq.css";
+import "@/styles/sections/faq.css";
 import { QuestionCard } from "@/components/questionCard";
 
 export function FaqSection() {
