@@ -20,7 +20,7 @@
   align-items: center;
   max-width: 648px;
   margin-left: 60px;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .hero__content,
@@ -37,16 +37,16 @@
 }
 
 .hero__heading {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 48px;
+  font-size: var(--font-size-h1-desktop);
+  line-height: var(--line-height-h1-desktop);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 }
 
 .hero__text {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
+  font-size: var(--font-size-text-lg);
+  line-height: var(--line-height-text-lg);
+  font-weight: var(--font-weight-regular);
 }
 
 .swiper-pagination {
@@ -58,18 +58,13 @@
   width: 20px;
   height: 6px;
   border-radius: 6px;
-  background-color: #cacacb;
+  background-color: var(--color-gray-200);
 }
 
 .swiper-pagination-bullet-active {
-  background: #ffffff;
+  background: var(--color-white);
 }
 
-/* Tablet: from 768px up to 1279px */
-@media (min-width: 768px) and (max-width: 1279px) {
-}
-
-/* Mobile: less than 768px */
 @media (max-width: 767px) {
   .hero {
     height: 600px;
@@ -86,7 +81,7 @@
   }
 
   .hero__heading {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: var(--font-size-h1-mobile);
+    line-height: var(--line-height-h1-mobile);
   }
 }

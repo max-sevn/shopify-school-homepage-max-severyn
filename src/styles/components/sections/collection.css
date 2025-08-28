@@ -1,4 +1,3 @@
-/* COLLECTION STYLES */
 .collection {
   display: flex;
   flex-direction: column;
@@ -8,9 +7,9 @@
 }
 
 .collection__heading {
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 36px;
+  font-size: var(--font-size-h2-desktop);
+  line-height: var(--line-height-h2-desktop);
+  font-weight: var(--font-weight-regular);
 }
 
 .collection__wrapper {
@@ -33,16 +32,15 @@
 
 .collection__item-heading,
 .collection__item-price {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
+  font-size: var(--font-size-text-lg);
+  line-height: var(--line-height-text-lg);
+  font-weight: var(--font-weight-regular);
 }
 
 .collection__item-price {
-  color: #737373;
+  color: var(--color-gray-300);
 }
 
-/* SWIPER RELATED STYLES */
 .collection__button-next {
   position: absolute;
   right: -20px;
@@ -58,8 +56,8 @@
   border-radius: 50%;
   cursor: pointer;
   user-select: none;
-  background-color: #ffffff;
-  border: 1px solid #ebebeb;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-100);
 }
 .swiper-button-next::after,
 .swiper-button-prev::after {
@@ -76,7 +74,6 @@
   }
 }
 
-/* Mobile: less than 768px */
 @media (max-width: 767px) {
   .collection {
     gap: 32px;
@@ -84,8 +81,8 @@
   }
 
   .collection__heading {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: var(--font-size-h2-mobile);
+    line-height: var(--line-height-h2-mobile);
   }
 
   .collection__button-next {

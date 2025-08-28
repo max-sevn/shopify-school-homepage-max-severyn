@@ -2,6 +2,12 @@
   margin: 0;
   padding: 0;
 }
+body {
+  color: var(--color-black);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-style: normal;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -10,10 +16,33 @@ ul {
   list-style: none;
 }
 :root {
-  color: #111111;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #111111;
+  --color-gray-300: #737373;
+  --color-gray-200: #cacacb;
+  --color-gray-100: #ebebeb;
+  --color-gray-50: #f5f5f5;
+
+  /* Typography */
+  --font-family-base: "Poppins", sans-serif;
+
+  --font-size-h1-desktop: 48px;
+  --font-size-h1-mobile: 30px;
+  --font-size-h2-desktop: 30px;
+  --font-size-h2-mobile: 24px;
+  --font-size-text-lg: 16px;
+  --font-size-text-md: 14px;
+
+  --line-height-h1-desktop: 48px;
+  --line-height-h1-mobile: 36px;
+  --line-height-h2-desktop: 36px;
+  --line-height-h2-mobile: 32px;
+  --line-height-text-lg: 24px;
+  --line-height-text-md: 20px;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 }
 
 .button {
